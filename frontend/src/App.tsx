@@ -11,7 +11,7 @@ function App() {
     <div className="flex flex-col w-full h-screen justify-center items-center">
       <div
         id="container"
-        className="flex w-4/5 h-4/5 flex-col bg-green-500 rounded border border-2">
+        className="flex w-4/5 h-4/5 flex-col bg-green-500 rounded border-2">
         <div className="flex flex-col w-full h-auto mt-5 justify-center items-center space-y-2">
           <p className="text-[4rem] font-extrabold font-serif">Users</p>
           <SearchBar

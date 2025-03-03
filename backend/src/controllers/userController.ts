@@ -1,0 +1,69 @@
+import { Request, Response } from "express";
+import { PrismaClient } from "@prisma/client";
+
+const prisma = new PrismaClient();
+
+export class UserController {
+  public getAllUsers = async (req: Request, res: Response): Promise<void> => {
+    try {
+      // This should be fetching from database
+      const users = await prisma.user.findMany();
+      console.log(users);
+
+      res.status(200).json({
+        success: true,
+        data: users,
+      });
+    } catch (error) {
+      res.status(500).json({
+        success: false,
+        message: "Server Error",
+        error: error instanceof Error ? error.message : "Unknown error",
+      });
+    }
+  };
+
+  public getUserById = async (req: Request, res: Response): Promise<void> => {
+    try {
+      const userId = parseInt(req.params.id);
+      // This should be fetching from database
+      const user = { id: userId, name: "John Doe" };
+
+      res.status(200).json({
+        success: true,
+        data: user,
+      });
+    } catch (error) {
+      res.status(500).json({
+        success: false,
+        message: "Server Error",
+        error: error instanceof Error ? error.message : "Unknown error",
+      });
+    }
+  };
+
+  public createUser = async (req: Request, res: Response): Promise<void> => {
+    try {
+      const { name, age } = req.body;
+
+      const newUser = await prisma.user.create({
+        data: {
+          name: name,
+          age: age,
+        },
+      });
+
+      res.status(201).json({
+        success: true,
+        data: newUser,
+      });
+    } catch (error) {
+      res.status(500).json({
+        success: false,
+        message: "Server Error",
+        error: error instanceof Error ? error.message : "Unknown error",
+      });
+      console.log(error);
+    }
+  };
+}
