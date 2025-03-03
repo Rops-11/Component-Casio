@@ -5,8 +5,9 @@ const router = express();
 const userController = new UserController();
 
 router.get("/", userController.getAllUsers)
-router.get("/id", userController.getAllUsers)
-router.post("/create", userController.createUser)
+router.get("/:id", userController.getUserById)
+router.post("/", userController.createUser)
+router.delete("/:id", userController.deleteUser)
 
 
 export default router;
