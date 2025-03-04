@@ -2,6 +2,7 @@ import dotenv from "dotenv";
 import express from "express";
 import cors from "cors";
 import userRoutes from "./routes/user";
+import allowedOrigins from "./config/allowedOrigins";
 
 dotenv.config({ path: ".env" });
 

@@ -9,8 +9,6 @@ const useSearch = (users: User[]) => {
     if (inputValue) {
       const newUsers = users!.filter((user) => user.name!.includes(inputValue));
 
-      console.log(newUsers);
-
       setFilteredUsers(newUsers);
 
       console.log(filteredUsers);
