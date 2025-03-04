@@ -6,7 +6,7 @@ interface Props {
 
 const UserCard = ({ user }: Props) => {
   return (
-    <div className="flex w-11/12 h-auto p-3 bg-gray-400 rounded border border-2">
+    <div className="flex w-11/12 h-auto p-3 bg-gray-400 rounded border-2">
       {user.name}
     </div>
   );

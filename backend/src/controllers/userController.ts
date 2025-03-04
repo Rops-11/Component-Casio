@@ -6,9 +6,7 @@ const prisma = new PrismaClient();
 export class UserController {
   public getAllUsers = async (req: Request, res: Response): Promise<void> => {
     try {
-      // This should be fetching from database
       const users = await prisma.user.findMany();
-      console.log(users);
 
       res.status(200).json({
         success: true,
@@ -62,7 +60,6 @@ export class UserController {
         message: "Server Error",
         error: error instanceof Error ? error.message : "Unknown error",
       });
-      console.log(error);
     }
   };
 
@@ -81,7 +78,6 @@ export class UserController {
         message: "Server Error",
         error: error instanceof Error ? error.message : "Unknown error",
       });
-      console.log(error);
     }
   };
 }

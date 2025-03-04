@@ -14,3 +14,12 @@ model User {
 
   @@map("users")
 }
+
+model Employee {
+  id   String  @id @default(dbgenerated("gen_random_uuid()")) @map("_id") @db.Uuid
+  name String
+  role String
+  salary String
+
+  @@map("employees")
+}

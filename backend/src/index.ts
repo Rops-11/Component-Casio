@@ -2,7 +2,7 @@ import dotenv from "dotenv";
 import express from "express";
 import cors from "cors";
 import userRoutes from "./routes/user";
-import allowedOrigins from "./config/allowedOrigins";
+import employeeRoutes from "./routes/employee";
 
 dotenv.config({ path: ".env" });
 
@@ -13,6 +13,7 @@ server.use(express.json());
 server.use(cors());
 
 server.use("/user", userRoutes);
+server.use("/employee", employeeRoutes);
 
 // For PORT
 const PORT = Number(process.env.PORT) || 3000;

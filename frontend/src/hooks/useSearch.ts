@@ -8,10 +8,7 @@ const useSearch = (users: User[]) => {
   useEffect(() => {
     if (inputValue) {
       const newUsers = users!.filter((user) => user.name!.includes(inputValue));
-
       setFilteredUsers(newUsers);
-
-      console.log(filteredUsers);
     } else {
       setFilteredUsers(users!);
     }
