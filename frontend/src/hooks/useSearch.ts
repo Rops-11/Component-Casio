@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { User } from "../types/user.types";
 
 const useSearch = (users: User[]) => {
