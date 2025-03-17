@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 interface Props {
   inputValue: string | undefined;
   setInputValue: React.Dispatch<React.SetStateAction<string | undefined>>;
@@ -14,7 +12,7 @@ const SearchBar = ({ inputValue, setInputValue }: Props) => {
       <input
         type="text"
         value={inputValue}
-        placeholder="Search for users..."
+        placeholder="Search for name..."
         className="w-full h-full pl-4 outline-none placeholder-gray-500 text-sm"
         onChange={handleChange}
       />
