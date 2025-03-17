@@ -3,6 +3,7 @@ import express from "express";
 import cors from "cors";
 import userRoutes from "./routes/user";
 import employeeRoutes from "./routes/employee";
+import memberRoutes from "./routes/member";
 
 dotenv.config({ path: ".env" });
 
@@ -14,7 +15,7 @@ server.use(cors());
 
 server.use("/user", userRoutes);
 server.use("/employee", employeeRoutes);
-
+server.use("/member", memberRoutes);
 // For PORT
 const PORT = Number(process.env.PORT) || 3000;
 

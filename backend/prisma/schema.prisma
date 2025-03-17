@@ -23,3 +23,15 @@ model Employee {
 
   @@map("employees")
 }
+
+model Member {
+  id   String  @id @default(dbgenerated("gen_random_uuid()")) @map("_id") @db.Uuid
+  firstName String
+  lastName String
+  groupName String
+  role String
+  expectedSalary String
+  expectedDateOfDefense String
+
+  @@map("members")
+}

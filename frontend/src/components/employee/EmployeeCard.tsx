@@ -1,4 +1,4 @@
-import { Employee } from "../types/employee.types";
+import { Employee } from "../../types/employee.types";
 
 interface Props {
   employee: Employee;

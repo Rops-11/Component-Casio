@@ -1,4 +1,4 @@
-import useGetEmployees from "../hooks/useGetEmployees";
+import useGetEmployees from "../../hooks/useGetEmployees";
 import AllEmployeesList from "./AllEmployeesList";
 import EntryLevelEmployeesList from "./EntryLevelEmployeesList";
 import SeniorEmployeesList from "./SeniorEmployeesList";

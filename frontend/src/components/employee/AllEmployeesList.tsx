@@ -1,5 +1,5 @@
 import EmployeeCard from "./EmployeeCard";
-import { Employee } from "../types/employee.types";
+import { Employee } from "../../types/employee.types";
 import EmployeeListHeader from "./EmployeeListHeader";
 
 const AllEmployeesList = ({ employees }: { employees: Employee[] }) => {

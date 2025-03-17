@@ -1,0 +1,12 @@
+{
+  "name": "component-casio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "app": "npx concurrently \"npm run dev --prefix frontend\" \"npm run dev --prefix backend\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

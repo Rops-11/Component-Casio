@@ -1,11 +1,11 @@
 import UserCard from "./UserCard";
-import SearchBar from "./SearchBar";
-import useGetUsers from "../hooks/useGetUsers";
-import useSearch from "../hooks/useSearch";
+import SearchBar from "../utils/SearchBar";
+import useGetUsers from "../../hooks/useGetUsers";
+import useSearch from "../../hooks/useSearch";
 
 const UsersList = () => {
   const { data: users, loading } = useGetUsers();
-  const { inputValue, setInputValue, filteredUsers } = useSearch(users!);
+  const { inputValue, setInputValue, filteredEntries } = useSearch(users!);
   return (
     <div className="flex flex-col w-full h-screen justify-center items-center">
       <div
@@ -26,12 +26,12 @@ const UsersList = () => {
           <div
             id="list"
             className="flex flex-col overflow-auto items-center my-10">
-            {filteredUsers &&
-              filteredUsers.map((user) => {
+            {filteredEntries &&
+              filteredEntries.map((entry) => {
                 return (
                   <UserCard
-                    key={user.id}
-                    user={user}
+                    key={entry.id}
+                    user={entry}
                   />
                 );
               })}
