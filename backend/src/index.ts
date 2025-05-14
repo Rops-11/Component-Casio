@@ -4,6 +4,7 @@ import cors from "cors";
 import userRoutes from "./routes/user";
 import employeeRoutes from "./routes/employee";
 import memberRoutes from "./routes/member";
+import taskRoutes from "./routes/task";
 
 dotenv.config({ path: ".env" });
 
@@ -16,7 +17,8 @@ server.use(cors());
 server.use("/user", userRoutes);
 server.use("/employee", employeeRoutes);
 server.use("/member", memberRoutes);
-// For PORT
+server.use("/task", taskRoutes);
+
 const PORT = Number(process.env.PORT) || 3000;
 
 server.listen(PORT, "0.0.0.0", () => {

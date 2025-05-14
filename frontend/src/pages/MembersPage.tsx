@@ -1,4 +1,3 @@
-import NavBar from "../components/utils/NavBar";
 import MembersList from "../components/member/MembersList";
 import { useState } from "react";
 import MemberForm from "../components/member/MemberForm";
@@ -52,7 +51,6 @@ const MembersPage = () => {
 
   return (
     <div className="flex flex-col w-full h-full items-center justify-center">
-      <NavBar />
       <MembersList
         setAddModal={setAddModal}
         setEditModal={setEditModal}

@@ -35,3 +35,29 @@ model Member {
 
   @@map("members")
 }
+
+
+model Task {
+  id          String    @id @default(cuid())
+  title       String
+  description String?
+  dueDate     DateTime?
+  type        String    // "basic", "timed", "checklist"
+  completed   Boolean   @default(false)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  items       ChecklistItem[]
+
+  @@map("tasks")
+}
+
+model ChecklistItem {
+  id        String  @id @default(cuid())
+  text      String
+  completed Boolean @default(false)
+  taskId    String
+  task      Task    @relation(fields: [taskId], references: [id], onDelete: Cascade) 
+
+  @@map("checklistitems")
+}

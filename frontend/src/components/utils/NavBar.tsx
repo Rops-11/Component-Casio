@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
   const navigate = useNavigate();
@@ -12,13 +12,6 @@ const NavBar = () => {
         Component Casio
       </button>
       <div className="space-x-4">
-        <button
-          onClick={() => {
-            navigate("/");
-          }}
-          className="text-white hover:text-gray-300">
-          Home
-        </button>
         <button
           onClick={() => {
             navigate("/users");
@@ -39,6 +32,13 @@ const NavBar = () => {
           }}
           className="text-white hover:text-gray-300">
           Members
+        </button>
+        <button
+          onClick={() => {
+            navigate("/todo");
+          }}
+          className="text-white hover:text-gray-300">
+          Tasks
         </button>
       </div>
     </div>
